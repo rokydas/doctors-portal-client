@@ -3,23 +3,26 @@ import ServicesInfo from '../ServicesInfo/ServicesInfo';
 import fluoride from '../../../images/fluoride.png';
 import cavity from '../../../images/cavity.png';
 import whitening from '../../../images/whitening.png';
-
-const serviceData = [
-    {
-        name: 'Fluoride Treatment',
-        img: fluoride,
-    },
-    {
-        name: 'Cavity Filling',
-        img: cavity,
-    },
-    {
-        name: 'Teeth Whitening',
-        img: whitening,
-    }
-]
+import { useHistory } from 'react-router-dom';
 
 const Services = () => {
+    const history = useHistory();
+
+    const serviceData = [
+        {
+            name: 'Fluoride Treatment',
+            img: fluoride,
+        },
+        {
+            name: 'Cavity Filling',
+            img: cavity,
+        },
+        {
+            name: 'Teeth Whitening',
+            img: whitening,
+        }
+    ]
+
     return (
         <div className="text-center mt-5">
             <h5 style={{ color: '#0fcfea' }}>OUR SERVICES</h5>
@@ -30,6 +33,7 @@ const Services = () => {
                         serviceData.map(service => <ServicesInfo service={service} />)
                     }
                 </div>
+                <a href="/appointment">Appointment</a>
             </div>
 
 
